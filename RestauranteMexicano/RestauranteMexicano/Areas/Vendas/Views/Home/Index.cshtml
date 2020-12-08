@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style type="text/css">
+    h2:hover {
+        color: #8447FF;
+        transition: 0.5s;
+    }
+</style>
+<div class="animated animatedFadeInUp fadeInUp">
+    <div class="tabela" style="text-align:center;">
+        
+        <div class="primeira">
+            <a href="@Url.Action("Index", "Comanda", null)">
+                <h2>É uma comanda</h2>
+                <img class="imagem" src="~/Content/imagens/reservas.jpg" width="90%" height="90%" />
+            </a>
+        </div>
+       
+        
+        <div class="segunda">
+            <a href="@Url.Action("Index", "Delivery", null)">
+                <h2>É uma entrega</h2>
+                <img class="imagem" src="~/Content/imagens/delivery.png" width="90%" height="90%" />
+            </a>
+        </div>
+       
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

@@ -1,0 +1,57 @@
+﻿@model IEnumerable<RestauranteMexicano.Areas.Vendas.Models.Pagamento>
+
+@{
+    ViewBag.Title = "Comandas quitadas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="animated animatedFadeInUp fadeInUp">
+    <table class="tabela">
+        <tr>
+            <th colspan="3">
+                <h2>@ViewBag.title</h2>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.idComanda)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.formaPagamento)
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.idComanda)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.formaPagamento)
+                </td>
+                <td class="menu">
+                    <a href="@Url.Action("Delete", "Pagamento", new { id = item.id})" style="padding:3px;">
+                        <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-dash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
+                        </svg>
+                    </a>
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+<a href="@Url.Action("Create", "Pagamento", null)" style="padding:3px;">
+    <div class="buttonADD"
+    </div>
+    <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+    </svg>
+</a>

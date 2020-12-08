@@ -1,0 +1,43 @@
+﻿@using RestauranteMexicano.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Efetuar login";
+}
+
+<div class="animated animatedFadeInUp fadeInUp">
+    <div class="tabela">
+        <br>
+        <div class="primeira">
+            <img src="~/Content/imagens/rush-8.png" width="100%" height="100%" />
+            <br />
+            <h3>Lembre-se: somente os adm's realizam todas as operações.</h3>
+        </div>
+        <div class="segunda">
+            <h2>Login</h2> <br /> <br />
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+
+                @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                <br /> <br />
+                <input type="submit" value="Login" class="button" />
+
+                @Html.ActionLink("Registrar-se", "Register")
+
+            }
+            @section Scripts {
+                @Scripts.Render("~/bundles/jqueryval")
+            }
+        </div>
+    </div>
+</div>

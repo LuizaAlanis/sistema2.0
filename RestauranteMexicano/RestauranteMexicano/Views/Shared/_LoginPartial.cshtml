@@ -1,22 +1,51 @@
 ﻿@using Microsoft.AspNet.Identity
 @if (Request.IsAuthenticated)
 {
-    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
     {
-    @Html.AntiForgeryToken()
+        @Html.AntiForgeryToken()
 
-    <ul class="nav navbar-nav navbar-right">
-        <li>
-            @Html.ActionLink("Olá " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
-        </li>
-        <li><a href="javascript:document.getElementById('logoutForm').submit()">Fazer logoff</a></li>
-    </ul>
-    }
+        @*<center>
+            <li class="nav-item">
+                @Html.ActionLink("Olá " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+            </li>
+        </center>*@
+            <li class="nav-item">
+                <a href="javascript:document.getElementById('logoutForm').submit()" class="nav-link">
+                    <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-power" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M5.578 4.437a5 5 0 1 0 4.922.044l.5-.866a6 6 0 1 1-5.908-.053l.486.875z" />
+                        <path fill-rule="evenodd" d="M7.5 8V1h1v7h-1z" />
+                        <g class="fa-group">
+                            <path fill="currentColor"
+                                  d="M5.578 4.437a5 5 0 1 0 4.922.044l.5-.866a6 6 0 1 1-5.908-.053l.486.875z"
+                                  class="fa-secondary"></path>
+                            <path fill="currentColor"
+                                  d="M7.5 8V1h1v7h-1z"
+                                  class="fa-primary"></path>
+                        </g>
+                    </svg>
+                    <span class="link-text"> Deslogar </span>
+                </a>
+            </li>
+
+    }   
 }
 else
 {
-    <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink("Registre-se", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-        <li>@Html.ActionLink("Logon", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
-    </ul>
+<center>
+ 
+    <li class="nav-item">
+        <h4>
+            @Html.ActionLink("Cadastro", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })
+        </h4>
+        
+    </li>
+   
+    <li class="nav-item">
+        <h4>
+            @Html.ActionLink("Logon", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
+        </h4>
+        
+    </li>
+</center>
 }

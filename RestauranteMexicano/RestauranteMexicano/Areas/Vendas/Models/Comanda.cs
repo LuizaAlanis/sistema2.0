@@ -84,6 +84,9 @@ namespace RestauranteMexicano.Areas.Vendas.Models
             string comando = string.Format("delete from ItensComanda where idComanda = {0};", comanda.id);
             db.ExecutaComando(comando);
 
+            string pagamento = string.Format("delete from Pagamento where idComanda = {0};", comanda.id);
+            db.ExecutaComando(pagamento);
+
             string StrQuery = string.Format("delete from Comanda where id = {0};", comanda.id);
             db.ExecutaComando(StrQuery);
         }

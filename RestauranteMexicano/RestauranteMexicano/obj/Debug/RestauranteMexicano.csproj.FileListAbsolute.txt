@@ -51,3 +51,4 @@ C:\Users\Cleber\Desktop\TCM\Sistema\RestauranteMexicano\RestauranteMexicano\obj\
 C:\Users\Cleber\Desktop\TCM\Sistema\RestauranteMexicano\RestauranteMexicano\obj\Debug\RestauranteMexicano.csproj.CopyComplete
 C:\Users\Cleber\Desktop\TCM\Sistema\RestauranteMexicano\RestauranteMexicano\obj\Debug\RestauranteMexicano.dll
 C:\Users\Cleber\Desktop\TCM\Sistema\RestauranteMexicano\RestauranteMexicano\obj\Debug\RestauranteMexicano.pdb
+C:\Users\Cleber\Desktop\TCM\Sistema\RestauranteMexicano\RestauranteMexicano\obj\Debug\RestauranteMexicano.csprojAssemblyReference.cache

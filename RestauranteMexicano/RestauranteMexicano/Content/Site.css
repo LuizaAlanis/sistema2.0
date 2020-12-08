@@ -432,6 +432,7 @@ main {
     align-items: center;
     border-radius: 15px;
     box-shadow: 1px 1px 10px rgba(15, 15, 15, 0.3);
+    margin-top:100px;
 }
 .form-control {
     display: block;
